@@ -1,0 +1,87 @@
+﻿@model AcademicAgriculture.Web.Models.Footers.FooterViewModel
+<div id="footer-widgets" class="footer-widgets widgets-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="widget">
+                    <p style="line-height: 1.7;">@Model.About.Description</p>
+                </div>
+                <div class="widget gardenhub-social-links-widget">
+                    @foreach (var social in Model.Socials)
+                    {
+                        <a href="@social.Url" target="_blank"><i class="fa fa-@social.TypeClass fa-2x"></i></a>
+                    }
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div id="nav_menu-2" class="widget widget_nav_menu">
+                    <h4 class="widget-title">Hizmetler</h4>
+                    <div class="menu-service-menu-container">
+                        <ul id="menu-service-menu" class="menu">
+                            <li><a href="#">Tüm Hizmetler</a></li>
+                            @foreach (var service in Model.Services)
+                            {
+                                <li><a asp-controller="Home" asp-action="ServiceDetail" asp-route-id="@service.Id">@service.Title</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div id="text-3" class="widget">
+                    <h4 class="widget-title">Bize Ulaşın</h4>
+
+                    <div class="footer-contact address">
+                        <div class="ft-contact">
+                            <i class="flaticon-global"></i>
+                            <p>@Model.Content.Address</p>
+                        </div>
+                        <div class="ft-contact">
+                            <i class="flaticon-web"></i>
+                            <p>@Model.Content.Email</p>
+                        </div>
+                        <div class="ft-contact">
+                            <i class="flaticon-phone-set"></i>
+                            <p>@Model.Content.Phone</p>
+                        </div>
+                        <div class="ft-contact">
+                            <i class="flaticon-clock-1"></i>
+                            <p>Pzt-Cum - 09:00 - 18:00</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div id="text-4" class="widget">
+                    <h4 class="widget-title">Çalışma saatleri</h4>
+                    <ul class="opening-hours">
+                        <li>Pazartesi <span class="hour">09:30 - 18:00</span></li>
+                        <li>Salı<span class="hour">09:30 - 18:00</span></li>
+                        <li>Çarşamba <span class="hour">09:30 - 18:00</span></li>
+                        <li>Perşembe<span class="hour">09:30 - 18:00</span></li>
+                        <li>Cuma <span class="hour">09:30 - 18:00</span></li>
+                        <li>Cumartesi <span class="hour main-color">Kapalı</span></li>
+                        <li>Pazar <span class="hour main-color">Kapalı</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--footer sec end-->
+<!--copyright sec-->
+<footer id="colophon" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-copyright col-md-6 col-sm-12 col-sx-12">
+                <div class="site-info">
+                    Copyright@2020 <a href="http://muslumbitgen.com/" target="_blank">Müslüm BİTGEN</a>, All Right Reserved
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</footer>

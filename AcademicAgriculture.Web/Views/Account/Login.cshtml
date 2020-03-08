@@ -1,0 +1,81 @@
+﻿@using System.Threading.Tasks
+@model AcademicAgriculture.Web.Models.Users.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Akademik Ziraat ve Peysaj</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="description" content="Elephant is an admin template that helps you build modern Admin Applications, professionally fast! Built on top of Bootstrap, it includes a large collection of HTML, CSS and JS components that are simple to use and easy to customize.">
+    <meta property="og:url" content="http://demo.madebytilde.com/elephant">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The fastest way to build Modern Admin APPS for any platform, browser, or device.">
+    <meta property="og:description" content="Elephant is an admin template that helps you build modern Admin Applications, professionally fast! Built on top of Bootstrap, it includes a large collection of HTML, CSS and JS components that are simple to use and easy to customize.">
+    <meta property="og:image" content="http://demo.madebytilde.com/elephant.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The fastest way to build Modern Admin APPS for any platform, browser, or device.">
+    <meta name="twitter:description" content="Elephant is an admin template that helps you build modern Admin Applications, professionally fast! Built on top of Bootstrap, it includes a large collection of HTML, CSS and JS components that are simple to use and easy to customize.">
+    <meta name="twitter:image" content="http://demo.madebytilde.com/elephant.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#27ae60">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
+    <link rel="stylesheet" href="~/admin/css/vendor.min.css">
+    <link rel="stylesheet" href="~/admin/css/elephant.min.css">
+    <link rel="stylesheet" href="~/admin/css/login-2.min.css">
+</head>
+<body>
+
+    <div class="login">
+        <div class="login-body">
+            <a class="login-brand" href="index.html">
+                <img class="img-responsive" src="~/admin/img/logo.svg" alt="Elephant">
+            </a>
+            <div class="login-form">
+                <form data-toggle="validator" asp-controller="Account" asp-action="Login">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label for="email">Kullanıcı Adı</label>
+                        <input id="email" class="form-control" asp-for="UserName" name="UserName" spellcheck="false" autocomplete="off" data-msg-required="Lütfen kullanıcı adını  giriniz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Şifre</label>
+                        <div class="input-group">
+                            <input id="password" class="form-control" asp-for="Password" type="password" name="Password" minlength="6" data-msg-minlength="Şifre 6 karakter veya daha fazla olmalıdır." data-msg-required="Lütfen şifre giriniz!" required>
+                            <span class="input-group-addon">
+                                <label class="custom-control custom-control-primary custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" name="password_toggler">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-label"><i class="icon icon-eye"></i></span>
+                                </label>
+                            </span>
+                        </div>
+                        <small class="help-block">Minimum 6 karakter; harfe duyarlı.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-control-primary custom-checkbox">
+                            <input class="custom-control-input" asp-for="RememberMe" type="checkbox" checked="checked">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-label">Beni hatırla.</span>
+                        </label>
+                        <span aria-hidden="true"> · </span>
+                        <a asp-controller="Account" asp-action="ForgotPassword">Parolanızı mı unuttunuz?</a>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Giriş Yap</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/admin/js/vendor.min.js"></script>
+    <script src="~/admin/js/elephant.min.js"></script>
+    <script src="~/admin/js/signup-1.min.js"></script>
+
+</body>
+</html>

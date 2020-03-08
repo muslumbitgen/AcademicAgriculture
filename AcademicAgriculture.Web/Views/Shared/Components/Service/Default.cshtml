@@ -1,0 +1,35 @@
+﻿@model AcademicAgriculture.Web.Models.Services.ServiceListViewModel
+<div class="welcomesec secpadd">
+    <div class="container">
+        <div class="fh-section-title clearfix  text-center style-1 version-dark has-icon margbtm40">
+            <h2>Hizmetlerimiz</h2>
+            <span class="fh-icon"><i class="flaticon-nature-3"></i></span>
+
+        </div>
+
+        <div class="fh-service-2  style-1">
+            <div class="service-list row">
+                @{
+                    var i = 0;
+                }
+                @foreach (var service in Model.Services)
+                {
+                    if (i >= 6) i = 0;
+                    i++;
+                    <div class="item-service  col-xs-12 col-sm-6 col-md-3">
+                        <div class="service-content">
+                            <div class="summary">
+                                <a class="service-link" asp-controller="Home" asp-action="ServiceDetail" asp-route-id="@service.Id"></a>
+                                <div class="entry-header">
+                                    <div class="service-icon"><i class="flaticon-nature-@i "></i></div>
+                                    <h2 class="entry-title"><a asp-controller="Home" asp-action="ServiceDetail" asp-route-id="@service.Id">@service.Title</a></h2>
+                                </div>
+                                <p>@service.Description.Substring(0, 20)</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

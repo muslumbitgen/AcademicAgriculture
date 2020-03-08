@@ -1,0 +1,51 @@
+﻿@using System.Threading.Tasks
+@model AcademicAgriculture.Entities.Concrete.Social
+@{
+    ViewData["Page"] = "Sosyal Medya Ekle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="demo-form-wrapper">
+    <form data-toggle="validator" asp-controller="Social" asp-action="Add" method="post" enctype="multipart/form-data">
+        <div class="form form-horizontal">
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Sosyal Medya Adı</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input id="first-name" class="form-control" asp-for="Title" name="Title" spellcheck="false" data-msg-required="Lütfen adınızı giriniz!" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Sosyal Medya Adres</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input id="first-name" class="form-control" asp-for="Url" name="Url" spellcheck="false" data-msg-required="Lütfen adınızı giriniz!" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Sosyal Medya Seçiniz</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <select id="demo-select2-1" asp-for="TypeClass" class="form-control">
+                        <option value="facebook">Facebook <icon class="icon icon-facebook"></icon></option>
+                        <option value="twitter">Twitter <icon class="icon icon-twitter"></icon></option>
+                        <option value="instagram">Instagram <icon class="icon icon-instagram"></icon></option>
+                        <option value="linkedin">Linkedin <icon class="icon icon-linkedin"></icon></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Durum</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <select asp-for="IsActive" class="form-control">
+                        <option value="true" class="active">Aktif</option>
+                        <option value="false">Pasif</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3 col-xs-3 width-auto  mt-15 mr-5 ">
+                <input type="submit" id="save" value="Kaydet" class="btn btn-success" />
+                <a asp-action="Index" asp-controller="Social" class="btn btn-danger">Vazgeç</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+

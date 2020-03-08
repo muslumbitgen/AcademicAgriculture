@@ -1,0 +1,53 @@
+﻿@model AcademicAgriculture.Entities.Concrete.About
+@{
+    ViewData["Title"] = "AboutUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header title-area style-1">
+    <div class="header-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">Hakkımızda</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <nav class="breadcrumb">
+                        <a class="home" asp-controller="Home" asp-action="Index"><span>Anasayfa</span></a>
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <span>Hakkımızda</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagewrapper">
+    <div class="aboutpagesec">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="abotpgleft">
+                        <div class="fh-section-title clearfix  text-left style-1 version-dark">
+                            <h2><span class="main-color">@Model.Title</span></h2>
+                            <span class="fh-icon"><i class="flaticon-nature-3"></i></span>
+                        </div>
+                        <p>@Model.Description</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="abotpfrgt">
+                        <img src="~/img/@Model.Url" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

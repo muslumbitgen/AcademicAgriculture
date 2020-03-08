@@ -1,0 +1,7 @@
+﻿@model AcademicAgriculture.Web.Models.Services.ServiceListViewModel
+<ul class="sub-menu">
+    @foreach (var service in Model.Services)
+    {
+        <li><a asp-controller="Home" asp-action="ServiceDetail" asp-route-id="@service.Id">@service.Title</a></li>
+    }
+</ul>

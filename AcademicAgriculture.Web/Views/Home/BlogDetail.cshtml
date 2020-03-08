@@ -1,0 +1,68 @@
+﻿@model AcademicAgriculture.Web.Models.Blogs.BlogViewModel
+@{
+    ViewData["Title"] = "BlogDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header title-area style-1">
+    <div class="header-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">@Model.Blog.Title</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <nav class="breadcrumb">
+                        <a class="home" asp-controller="Home" asp-action="Index"><span>Anasayfa</span></a>
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <span>@Model.Blog.Title</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagewrapper">
+    <div class="single-post">
+        <div class="container">
+            <div class="row">
+                <div class="widget popular-posts-widget col-md-3 col-xs-12 col-sm-12">
+                    <h4 class="widget-title">Diğer Haberler</h4>
+                    @foreach (var item in Model.Blogs)
+                    {
+                        <div class="popular-post clearfix">
+                            <a class="widget-thumb" asp-controller="Home" asp-action="BlogDetail" asp-route-id="@item.Id">
+                            <img src="~/img/@item.Url" alt="image" width="75" height="75">
+                            </a>
+                            <div class="mini-widget-title">
+                                <h4><a asp-controller="Home" asp-action="BlogDetail" asp-route-id="@item.Id">@item.Title</a></h4>
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span>@String.Format("{0:MMM, yyyy}", item.CreateDate)</span>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="content-area col-md-9 col-sm-12 col-xs-12">
+                    <div class="hentry">
+                        <header class="entry-header">
+                            <div class="entry-thumbnail"><img src="~/img/@Model.Blog.Url" alt="image"></div>
+                            <h2 class="entry-title">@Model.Blog.Title</h2>
+                        </header><div class="entry-content">
+                            <blockquote>
+                                <p>
+                                    @Model.Blog.Description
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

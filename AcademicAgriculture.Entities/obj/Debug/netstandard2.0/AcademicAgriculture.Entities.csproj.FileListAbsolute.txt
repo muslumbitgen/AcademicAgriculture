@@ -1,0 +1,11 @@
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\bin\Debug\netstandard2.0\AcademicAgriculture.Entities.deps.json
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\bin\Debug\netstandard2.0\AcademicAgriculture.Entities.dll
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\obj\Debug\netstandard2.0\AcademicAgriculture.Entities.csprojAssemblyReference.cache
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\obj\Debug\netstandard2.0\AcademicAgriculture.Entities.AssemblyInfoInputs.cache
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\obj\Debug\netstandard2.0\AcademicAgriculture.Entities.AssemblyInfo.cs
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\bin\Debug\netstandard2.0\AcademicAgriculture.Entities.pdb
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\bin\Debug\netstandard2.0\AcademicAgriculture.Core.dll
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\bin\Debug\netstandard2.0\AcademicAgriculture.Core.pdb
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\obj\Debug\netstandard2.0\AcademicAgriculture.Entities.csproj.CopyComplete
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\obj\Debug\netstandard2.0\AcademicAgriculture.Entities.dll
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Entities\obj\Debug\netstandard2.0\AcademicAgriculture.Entities.pdb

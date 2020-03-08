@@ -1,0 +1,42 @@
+﻿@model AcademicAgriculture.Web.Models.Products.ProductListViewModel
+<div class="letestnews2 secpadd">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="fh-section-title clearfix  text-left style-1 version-light">
+                    <h2>Ürünler</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <a asp-controller="Home" asp-action="Products" class="blog-link lightver fh-btn margbtm30">Tüm Ürünler<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="fh-latest-post  carousel style-2">
+            <div class="post-list">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="item-latest-post clearfix ">
+                        <div class="entry-thumbnail">
+                            <a  asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id"><img width="150" height="215" src="~/img/@product.Url" alt="image"></a>
+                        </div>
+                        <div class="entry-summary">
+                            <div class="entry-header">
+                                <div class="entry-meta">
+                                    <span class="meta posted-on">@String.Format("{0:MMM, yyyy}", product.CreateDate)</span>
+                                </div>
+                                <h2 class="entry-title"><a  asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id">@product.Title</a></h2>
+
+                            </div>
+                            <div class="entry-content">
+                                <p>@product.Description.Substring(0, 20)</p>
+                            </div>
+                            <div class="entry-footer">
+                                <a  asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id">Devamını Oku...</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

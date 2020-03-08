@@ -1,0 +1,57 @@
+﻿@model ICollection<AcademicAgriculture.Entities.Concrete.Reference>
+
+@{
+    ViewData["Page"] = "Referanslar Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="Reference" asp-action="Add">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Başlık</td>
+                        <td>Durum</td>
+                        <td>Resim</td>
+                        <td>Açıklama</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var reference in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a class="btn btn-xs btn-info" asp-controller="Reference" asp-action="Update" asp-route-id="@reference.Id"><icon class="icon icon-edit"></icon></a>
+                                <a class="btn btn-xs btn-danger btndel" data-id="@reference.Id" data-controller="Reference" data-message="Referans"><icon class="icon icon-trash"></icon></a>
+                            </td>
+                            <td>@reference.Title</td>
+                            <td><button type="button" value="@reference.Id??Reference??IsActiveReference" class="btn btn-@(reference.IsActive == true ? "success" : "danger") btn-sm">@(reference.IsActive == true ? "Aktif" : "Pasif")</button></td>
+                            <td>
+                                <img src="~/img/@reference.Url" width="80" />
+                            </td>
+                            <td>@reference.Description</td>
+                            <td>@reference.CreateDate</td>
+                            <td>@reference.UpdateDate</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

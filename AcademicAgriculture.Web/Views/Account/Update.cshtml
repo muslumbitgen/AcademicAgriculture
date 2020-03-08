@@ -1,0 +1,64 @@
+﻿@model AcademicAgriculture.Web.Models.Users.UserUpdateViewModel
+
+@{
+    ViewData["Page"] = "Kullanıcı Güncelle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="demo-form-wrapper">
+    <form data-toggle="validator" asp-action="Update" asp-controller="Account">
+        <div class="form form-horizontal">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Adı Soyad</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input id="first-name" class="form-control" asp-for="FullName" name="FullName" spellcheck="false" data-msg-required="Lütfen adınızı giriniz!" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Kullanıcı Adı</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input id="first-name" class="form-control" asp-for="UserName" name="UserName" spellcheck="false" data-msg-required="Lütfen kullanıcı adınızı giriniz!" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Email Adresi</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input id="email" class="form-control" asp-for="Email" type="email" name="Email" spellcheck="false" autocomplete="off" data-msg-required="Lütfen e-mail adresinizi giriniz!" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Şifreniz</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <div class="input-group">
+                        <input id="password" class="form-control" asp-for="Password" type="password" name="Password" minlength="6" data-msg-minlength="Şifre 6 karakter veya daha fazla olmalıdır." data-msg-required="Lütfen şifre giriniz!" required>
+                        <span class="input-group-addon">
+                            <label class="custom-control custom-control-primary custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" name="password_toggler">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-label"><i class="icon icon-eye"></i></span>
+                            </label>
+                        </span>
+                    </div>
+                    <small class="help-block">Minimum 6 karakter.</small>
+                    <small class="help-block">Minimum 1 büyük harf içermelidir.</small>
+                    <small class="help-block">Minimum 1 küçük harf içermelidir.</small>
+                </div>
+            </div>
+            @*<div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Kategori Seçiniz</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <select id="demo-select2-1" asp-for="RoleId" class="form-control"
+                            asp-items="@(new SelectList(Model.Roles,"Id","Name"))"></select>
+                    <span asp-validation-for="RoleId"></span>
+                </div>
+            </div>*@
+            <div class="col-md-6 col-md-offset-3 col-xs-3 width-auto  mt-15 mr-5 ">
+                <input type="submit" id="save" value="Kaydet" class="btn btn-success" />
+                <a asp-action="Index" asp-controller="Account" class="btn btn-danger">Vazgeç</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,46 @@
+﻿@model AcademicAgriculture.Web.Models.Abouts.AboutViewModel
+<div class="bestservice">
+    <div class="container">
+        <div class="fh-icon-box-2  radius">
+            <div class="row">
+                <div class="item-box col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" target="_self" class="fh-icon"><span><i class="flaticon-people-1"></i></span></a>
+                    <h4><a href="#" target="_self">DÜRÜSLÜK</a></h4>
+                    <p>Verilen söze riayet.</p>
+                </div>
+                <div class="item-box col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" target="_self" class="fh-icon"><span><i class="flaticon-book-1"></i></span></a>
+                    <h4><a href="#" target="_self">Akademik</a></h4>
+                    <p>Akademik araştırma ile doğru yöntem.</p>
+                </div>
+                <div class="item-box col-md-4 col-sm-6 col-xs-12">
+                    <a href="gardenhub_theme.html" target="_self" class="fh-icon"><span><i class="flaticon-multimedia"></i></span></a>
+                    <h4><a href="gardenhub_theme.html" target="_self">Ziraat ve Peysaj Yönetimi</a></h4>
+                    <p>Kaliteli işin adresi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="aboutsec3 secpadd">
+    <div class="container">
+        <div class="fh-section-title clearfix  text-center style-1 version-dark has-icon margbtm40">
+            <h2>Hakkımızda</h2>
+            <span class="fh-icon"><i class="flaticon-nature-3"></i></span>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="about3left">
+                    <p class="">
+                        @Model.About.Description
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="about4rgt">
+                    <img src="~/img/@Model.About.Url" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

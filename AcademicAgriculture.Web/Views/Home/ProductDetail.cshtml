@@ -1,0 +1,66 @@
+﻿@model AcademicAgriculture.Web.Models.Products.ProductViewModel
+@{
+    ViewData["Title"] = "ProductDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header title-area style-1">
+    <div class="header-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">@Model.Product.Title</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <nav class="breadcrumb">
+                        <a class="home" asp-controller="Home" asp-action="Index"><span>Anasayfa</span></a>
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <span>@Model.Product.Title</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagewrapper">
+    <div class="single-post">
+        <div class="container">
+            <div class="row">
+                <div class="widgets-area  service-sidebar col-md-3 col-xs-12 col-sm-12">
+                    <div class="widgets-area  service-sidebar">
+                        <h4 class="widget-title">
+                            Diğer Ürünler
+                        </h4>
+                        <div class="widget services-menu-widget">
+                            <ul class="menu service-menu">
+                                @foreach (var item in Model.Products)
+                                {
+                                    <li><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="@item.Id">@item.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-area col-md-9 col-sm-12 col-xs-12">
+                    <div class="hentry">
+                        <header class="entry-header">
+                            <div class="entry-thumbnail"><img src="~/img/@Model.Product.Url" alt="image"></div>
+                            <h2 class="entry-title">@Model.Product.Title</h2>
+                        </header><div class="entry-content">
+                            <blockquote>
+                                <p>
+                                    @Model.Product.Description
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

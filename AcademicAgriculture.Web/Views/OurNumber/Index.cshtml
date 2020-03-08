@@ -1,0 +1,53 @@
+﻿@model ICollection<AcademicAgriculture.Entities.Concrete.OurNumber>
+@{
+    ViewData["Page"] = "Sayı Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="OurNumber" asp-action="Add">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Başlık</td>
+                        <td>Durum</td>
+                        <td>Sayı</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var number in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a class="btn btn-xs btn-info" asp-controller="OurNumber" asp-action="Update" asp-route-id="@number.Id"><icon class="icon icon-edit"></icon></a>
+                                <a class="btn btn-xs btn-danger btndel" data-id="@number.Id" data-controller="OurNumber" data-message="İletişim"><icon class="icon icon-trash"></icon></a>
+                            </td>
+                            <td>@number.Title</td>
+                            <td><button type="button" value="@number.Id??OurNumber??IsActiveOurNumber" class="btn btn-@(number.IsActive == true ? "success" : "danger") btn-sm">@(number.IsActive == true ? "Aktif" : "Pasif")</button></td>
+                            <td>@number.Number</td>
+                            <td>@number.CreateDate</td>
+                            <td>@number.UpdateDate</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

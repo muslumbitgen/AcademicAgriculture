@@ -1,0 +1,50 @@
+﻿@model AcademicAgriculture.Web.Models.References.ReferenceListViewModel
+<div class="page-header title-area style-1">
+    <div class="header-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">Anasayfa</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <nav class="breadcrumb">
+                        <a class="home" asp-controller="Home" asp-action="Index"><span>Anasayfa</span></a>
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <span>Referanslar</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagewrapper">
+    <div class="blog-grid allblogs">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.References)
+                {
+                    <div class="blog-wrapper col-xs-12 col-md-3 col-sm-6">
+                        <div class="wrapper">
+                            <div class="entry-thumbnail">
+                                <a  asp-controller="Home" asp-action="ReferanceDetail" asp-route-id="@item.Id"><img src="~/img/@item.Url" alt="image"></a>
+                                <div class="entry-time">
+                                    <span class="day">@item.CreateDate.Day</span>
+                                    <span class="month">@String.Format("{0:MMM}",item.CreateDate)</span>
+                                </div>
+                            </div>
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a  asp-controller="Home" asp-action="ReferanceDetail" asp-route-id="@item.Id">@item.Title.Substring(0,15)</a></h2>
+                            </header>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

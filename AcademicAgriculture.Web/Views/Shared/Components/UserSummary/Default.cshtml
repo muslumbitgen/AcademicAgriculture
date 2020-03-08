@@ -1,0 +1,39 @@
+﻿@model AcademicAgriculture.Web.Models.Users.UserDetailsViewModel
+
+<ul class="nav navbar-nav navbar-right">
+    <li class="visible-xs-block">
+        @if (!String.IsNullOrEmpty(Model.UserName))
+        {
+        <h4 class="navbar-text text-center"> @Model.UserName</h4>
+        }
+        </li>
+    <li class="hidden-xs hidden-sm">
+        <form class="navbar-search navbar-search-collapsed">
+            <div class="navbar-search-group">
+                <input class="navbar-search-input" type="text" placeholder="Search for people, companies, and more&hellip;">
+                <button class="navbar-search-toggler" title="Expand search form ( S )" aria-expanded="false" type="submit">
+                    <span class="icon icon-search icon-lg"></span>
+                </button>
+                <button class="navbar-search-adv-btn" type="button">Advanced</button>
+            </div>
+        </form>
+    </li>
+    <li class="dropdown hidden-xs">
+        @if (!String.IsNullOrEmpty(Model.UserName))
+        {
+            <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
+                    @Model.UserName    <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a asp-controller="Account" asp-action="LogOff"> Çıkış Yap</a></li>
+            </ul>
+        }
+    </li>
+    <li class="visible-xs-block">
+        <a asp-controller="Account" asp-action="LogOff">
+            <span class="icon icon-power-off icon-lg icon-fw"></span>
+            Çıkış Yap
+        </a>
+    </li>
+</ul>
+

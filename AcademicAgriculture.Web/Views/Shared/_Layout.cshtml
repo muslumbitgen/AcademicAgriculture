@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Akademik Ziraat ve Peysaj</title><!-- Stylesheets --><!-- bootstrap v3.3.6 css -->
+    <link href="~/home/css/css-bootstrap.css" rel="stylesheet">
+    <link href="~/home/css/css-font-awesome.css" rel="stylesheet"><!-- flaticon css -->
+    <link href="~/home/css/css-flaticon.css" rel="stylesheet"><!-- factoryplus-icons css -->
+    <link href="~/home/css/css-factoryplus-icons.css" rel="stylesheet"><!-- animate css -->
+    <link href="~/home/css/css-animate.css" rel="stylesheet"><!-- owl.carousel css -->
+    <link href="~/home/css/css-owl.css" rel="stylesheet"><!-- fancybox css -->
+    <link href="~/home/css/css-jquery.fancybox.css" rel="stylesheet">
+    <link href="~/home/css/css-hover.css" rel="stylesheet">
+    <link href="~/home/css/css-frontend.css" rel="stylesheet">
+    <link href="~/home/css/css-style.css" rel="stylesheet"><!-- switcher css -->
+    <link href="~/home/css/css-switcher.css" rel="stylesheet">
+    <link rel="stylesheet" id="factoryhub-color-switcher-css" href="~/home/css/switcher-default.css"><!-- revolution slider css -->
+    <link rel="stylesheet" type="text/css" href="~/home/css/revolution-settings.css">
+    <link rel="stylesheet" type="text/css" href="~/home/css/revolution-layers.css">
+    <link rel="stylesheet" type="text/css" href="~/home/css/revolution-navigation.css"><!--Favicon-->
+    <link rel="shortcut icon" href="~/home/favicons/9077-images-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/home/favicons/9077-images-favicon.ico" type="image/x-icon"><!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/home/css/css-responsive.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--><!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+<body class="home  header-sticky header-v1 hide-topbar-mobile header-sticky">
+    <div id="page">
+        <header id="masthead" class="site-header  clearfix">
+            <div class="header-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="site-logo col-md-2 col-sm-6 col-xs-6">
+                            <a asp-controller="Home" asp-action="Index" class="logo">
+                                <img src="~/home/images/images-logo.png" alt='' class="logo-dark show-logo" style="width:200px; height:80px">
+                            </a>
+                        </div>
+                        <div class=" col-sm-6 col-xs-6 col-md-9">
+                            <nav id="site-navigation" class="main-nav primary-nav nav">
+                                <ul class="menu">
+                                    <li class="current-menu-item">
+                                        <a asp-controller="Home" asp-action="Index">Anasayfa</a>
+                                    </li>
+                                    <li><a asp-controller="Home" asp-action="AboutUs">Hakkımızda</a></li>
+                                    <li><a asp-controller="Home" asp-action="Products" class="dropdown-toggle">Ürünler</a> </li>
+
+                                    <li>
+                                        <a href="#" class="dropdown-toggle">Hizmetler</a>
+                                        @await Component.InvokeAsync("ServiceMenu")
+                                    </li>
+                                    <li><a asp-controller="Home" asp-action="Referances" class="dropdown-toggle">Referanslar</a></li>
+
+
+                                    <li><a asp-controller="Home" asp-action="Contact" >İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-12 extra-item menu-item-search clearfix">
+                            <a id="toggle-search" class="toggle-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <form class="search-form">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input class="search-field" placeholder="Search..." type="search"><input class="search-submit" value="Search" type="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="navbar-toggle">
+                    <span class="navbar-icon">
+                        <span class="navbars-line"></span>
+                    </span>
+                </a>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @await Component.InvokeAsync("Footer")
+    <div class="scroll-to-top scroll-to-target" data-target=".site-header"><span class="icon fa fa-long-arrow-up"></span></div>
+
+    <!-- jquery Liabrary -->
+    <script src="~/home/js/6197-js-jquery-1.12.4.min.js"></script><!-- bootstrap v3.3.6 js -->
+    <script src="~/home/js/5960-js-bootstrap.min.js"></script><!-- fancybox js -->
+    <script src="~/home/js/9650-js-jquery.fancybox.pack.js"></script>
+    <script src="~/home/js/8812-js-jquery.fancybox-media.js"></script>
+    <script src="~/home/js/7341-js-isotope.pkgd.min.js"></script><!-- owl.carousel js -->
+    <script src="~/home/js/1611-js-owl.js"></script><!-- counter js -->
+    <script src="~/home/js/7779-js-jquery.appear.js"></script>
+    <script src="~/home/js/2514-js-jquery.countTo.js"></script><!-- validate js -->
+    <script src="~/home/js/2658-js-validate.js"></script><!-- switcher js -->
+    <script src="~/home/js/956-js-switcher.js"></script><!-- google map -->
+    <script src="~/home/js/5426-js-map-helper.js"></script><!-- REVOLUTION JS FILES -->
+    <script type="text/javascript" src="~/home/js/revolution-jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="~/home/js/revolution-jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="~/home/js/extensions-revolution.extension.video.min.js"></script><!-- script JS  -->
+    <script src="~/home/js/5778-js-scripts.min.js"></script>
+    <script src="~/home/js/9485-js-script.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

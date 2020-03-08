@@ -1,0 +1,104 @@
+﻿@model AcademicAgriculture.Web.Models.Contents.ContentViewModel
+    <div class="page-header title-area style-1">
+        <div class="header-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-title">İletişim</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <nav class="breadcrumb">
+                            <a class="home" asp-controller="Home" asp-action="Index"><span>Anasayfa</span></a>
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                            <span>İletişim</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="pagewrapper">
+    <div class="contact-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="fh-section-title clearfix  text-left style-2 version-dark margbtm30">
+                        <h2>İletişim <span class="main-color">Detayları</span></h2>
+                    </div>
+                    <div class="fh-contact-box  style-2 margbtm40">
+                        <div class="info">
+                            <div class="info-item">
+                                <span class="fh-icon"><i class="flaticon-globe"></i></span>
+                                <div class="details">@Model.Content.Address</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="fh-icon"><i class="flaticon-web"></i></span>
+                                <div class="details">@Model.Content.Email</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="fh-icon"><i class="flaticon-phone-set"></i></span>
+                                <div class="details">@Model.Content.Phone</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fh-section-title clearfix  text-left style-2 version-dark margbtm30">
+                        <h2 class="widget-title">Çalışma saatleri</h2>
+                    </div>
+                    <ul class="opening-hours vc_opening-hours">
+                        <li>Pazartesi <span class="hour">09:30 - 18:00</span></li>
+                        <li>Salı<span class="hour">09:30 - 18:00</span></li>
+                        <li>Çarşamba <span class="hour">09:30 - 18:00</span></li>
+                        <li>Perşembe<span class="hour">09:30 - 18:00</span></li>
+                        <li>Cuma <span class="hour">09:30 - 18:00</span></li>
+                        <li>Cumartesi <span class="hour main-color">Kapalı</span></li>
+                        <li>Pazar <span class="hour main-color">Kapalı</span></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="fh-section-title clearfix  text-left style-2 version-dark margbtm30">
+                        <h2>Bize <span class="main-color">Yazın</span></h2>
+                    </div>
+                    <form asp-controller="Home" asp-action="SendFeedback"  method="post">
+                        <div class="fh-form fh-form-1">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <p class="field">
+                                        <input placeholder="Adınız*"  name="AdSoyad" type="text">
+                                    </p>
+                                    <p class="field">
+                                        <input placeholder="Telefon*"  name="Telefon" type="text">
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <p class="field">
+                                        <input placeholder="Email *"  name="Email" type="email">
+                                    </p>
+                                    <p class="field">
+                                        <input placeholder="Konu"  name="Konu" type="text">
+                                    </p>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <p class="field single-field">
+                                        <textarea placeholder="Mesajın..."  name="Mesaj"></textarea>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <p class="field submit">
+                                        <input value="Gönder" class="fh-btn" type="submit">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

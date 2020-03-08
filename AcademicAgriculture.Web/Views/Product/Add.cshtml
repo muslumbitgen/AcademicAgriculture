@@ -1,0 +1,54 @@
+﻿@using System.Threading.Tasks
+@model AcademicAgriculture.Web.Models.Products.ProductAddViewModel
+@{
+    ViewData["Page"] = "Haber Ekle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="demo-form-wrapper">
+    <form data-toggle="validator" asp-controller="Product" asp-action="Add" method="post" enctype="multipart/form-data">
+        <div class="form form-horizontal">
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Başlık</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input id="first-name" class="form-control" asp-for="Product.Title" name="Product.Title" spellcheck="false" data-msg-required="Lütfen adınızı giriniz!" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Açıklama</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <textarea class="form-control" asp-for="Product.Description" name="Product.Description" spellcheck="false" data-msg-required="Lütfen adınızı giriniz!" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Resim adresi</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <input type="hidden" name="Url" value="@Model.Product.Url" />
+                    <input type="file" name="file" value="" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Kategori Seçiniz</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <select id="demo-select2-1" asp-for="Product.ProductCategoryId" class="form-control"
+                            asp-items="@(new SelectList(Model.Categories,"Id","Title"))"></select>
+                    <span asp-validation-for="Product.ProductCategoryId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-4 col-xs-12 control-label" for="form-control-1">Durum</label>
+                <div class="col-md-5 col-sm-8 col-xs-12">
+                    <select asp-for="Product.IsActive" class="form-control">
+                        <option value="true">Aktif</option>
+                        <option value="false">Pasif</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3 col-xs-3 width-auto  mt-15 mr-5 ">
+                <input type="submit" id="save" value="Kaydet" class="btn btn-success" />
+                <a asp-action="Index" asp-controller="Product" class="btn btn-danger">Vazgeç</a>
+            </div>
+        </div>
+    </form>
+</div>

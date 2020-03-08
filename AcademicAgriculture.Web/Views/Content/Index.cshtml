@@ -1,0 +1,55 @@
+﻿@model ICollection<AcademicAgriculture.Entities.Concrete.Content>
+@{
+    ViewData["Page"] = "İletişim Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="Content" asp-action="Add">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Telefon</td>
+                        <td>Email</td>
+                        <td>Durum</td>
+                        <td>Adres</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var content in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a class="btn btn-xs btn-info" asp-controller="Content" asp-action="Update" asp-route-id="@content.Id"><icon class="icon icon-edit"></icon></a>
+                                <a class="btn btn-xs btn-danger btndel" data-id="@content.Id" data-controller="Content" data-message="İletişim"><icon class="icon icon-trash"></icon></a>
+                            </td>
+                            <td>@content.Phone</td>
+                            <td>@content.Email</td>
+                            <td><button type="button" value="@content.Id??Content??IsActiveContent" class="btn btn-@(content.IsActive == true ? "success" : "danger") btn-sm">@(content.IsActive == true ? "Aktif" : "Pasif")</button></td>
+                            <td>@content.Address</td>
+                            <td>@content.CreateDate</td>
+                            <td>@content.UpdateDate</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

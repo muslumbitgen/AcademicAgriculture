@@ -1,0 +1,40 @@
+﻿@model AcademicAgriculture.Web.Models.Blogs.BlogListViewModel
+<div class="letestnews2 secpadd" style="background-image:none!important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="  clearfix  text-left style-1 version-light">
+                    <h2 style="color:black;">HABERLER</h2>
+                </div>
+            </div>
+        </div>
+        <div class="fh-latest-post  carousel style-2">
+            <div class="post-list">
+                @foreach (var blog in Model.Blogs)
+                {
+                    <div class="item-latest-post clearfix ">
+                        <div class="entry-thumbnail">
+                            <a asp-controller="Home" asp-action="BlogDetail" asp-route-id="@blog.Id"><img width="150" height="215" src="~/img/@blog.Url" alt="image"></a>
+                        </div>
+                        <div class="entry-summary">
+                            <div class="entry-header">
+                                <div class="entry-meta">
+                                    <span class="meta posted-on">@String.Format("{0:MMM, yyyy}",blog.CreateDate)</span>
+                                </div>
+                                <h2 class="entry-title"><a asp-controller="Home" asp-action="BlogDetail" asp-route-id="@blog.Id">@blog.Title</a></h2>
+
+                            </div>
+                            <div class="entry-content">
+                                <p>@blog.Description.Substring(0, 20)</p>
+                            </div>
+                            <div class="entry-footer">
+                                <a asp-controller="Home" asp-action="BlogDetail" asp-route-id="@blog.Id">Devamını Oku...</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

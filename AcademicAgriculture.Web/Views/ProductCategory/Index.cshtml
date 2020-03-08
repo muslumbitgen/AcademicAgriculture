@@ -1,0 +1,53 @@
+﻿@model ICollection<AcademicAgriculture.Entities.Concrete.ProductCategory>
+@{
+    ViewData["Page"] = "Haber Kategori Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="ProductCategory" asp-action="Add">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Başlık</td>
+                        <td>Durum</td>
+                        <td>Açıklama</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model)
+                    {
+                    <tr>
+                        <td>
+                            <a class="btn btn-xs btn-info" asp-controller="ProductCategory" asp-action="Update" asp-route-id="@category.Id"><icon class="icon icon-edit"></icon></a>
+                            <a class="btn btn-xs btn-danger btndel" data-id="@category.Id" data-controller="ProductCategory" data-message="Ürün"><icon class="icon icon-trash"></icon></a>
+                        </td>
+                        <td>@category.Title</td>
+                        <td><button type="button" value="@category.Id??ProductCategory??IsActiveProductCategory" class="btn btn-@(category.IsActive == true ? "success" : "danger") btn-sm">@(category.IsActive == true ? "Aktif" : "Pasif")</button></td>
+                        <td>@category.Description</td>
+                        <td>@category.CreateDate</td>
+                        <td>@category.UpdateDate</td>
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

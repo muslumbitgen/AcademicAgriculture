@@ -1,0 +1,55 @@
+﻿@model ICollection<AcademicAgriculture.Entities.Concrete.Social>
+@{
+    ViewData["Page"] = "Sosyal Medya Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="Social" asp-action="Add">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Sosyal Medya Adı</td>
+                        <td>Durum</td>
+                        <td>Sosyal Medya Tipi</td>
+                        <td>Sosyal Medya Adres</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var social in Model)
+                    {
+                    <tr>
+                        <td>
+                            <a class="btn btn-xs btn-info" asp-controller="Social" asp-action="Update" asp-route-id="@social.Id"><icon class="icon icon-edit"></icon></a>
+                            <a class="btn btn-xs btn-danger btndel" data-id="@social.Id" data-controller="Social" data-message="Sosyal medya"><icon class="icon icon-trash"></icon></a>
+                        </td>
+                        <td>@social.Title</td>
+                        <td><button type="button" value="@social.Id??Social??IsActiveSocial" class="btn btn-@(social.IsActive == true ? "success" : "danger") btn-sm">@(social.IsActive == true ? "Aktif" : "Pasif")</button></td>
+                        <td><icon class="icon icon-@social.TypeClass"></icon></td>
+                        <td>@social.Url</td>
+                        <td>@social.CreateDate</td>
+                        <td>@social.UpdateDate</td>
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,71 @@
+﻿@model AcademicAgriculture.Web.Models.Products.ProductListViewModel
+
+@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header title-area style-1">
+    <div class="header-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">Ürünler</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <nav class="breadcrumb">
+                        <a class="home" asp-controller="Home" asp-action="Index"><span>Anasayfa</span></a>
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <span>Ürünler</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagewrapper">
+    <div class="woocommerce all-products">
+        <div class="container">
+            <div class="row">
+
+                <div class="widgets-area  service-sidebar col-md-3 col-xs-12 col-sm-12">
+                    <div class="widgets-area  service-sidebar">
+                        <h4 class="widget-title">Tüm Kategoriler</h4>
+                        <div class="widget services-menu-widget">
+                            <ul class="menu service-menu">
+                                @foreach (var category in Model.ProductCategories)
+                                {
+                                    <li><a asp-controller="Home" asp-action="Products" asp-route-id="@category.Id">@category.Title</a></li>
+                                }
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-area col-md-9 col-sm-12 col-xs-12">
+                    <ul class="products row">
+                        @foreach (var product in Model.Products)
+                        {
+                            <li class="product col-sm-6 col-xs-6 col-md-4">
+                                <div class="product-inner">
+                                    <a asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id" class="woocommerce-LoopProduct-link"></a>
+                                    <div class="product-header">
+                                        <a asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id" class="woocommerce-LoopProduct-link"></a>
+                                        <a asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id" class="button add_to_cart_button">Devamını Oku</a>
+                                        <img src="~/img/@product.Url" alt="image">
+                                    </div>
+                                    <h2 class="woocommerce-loop-product__title">@product.Title</h2>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

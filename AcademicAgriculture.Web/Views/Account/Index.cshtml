@@ -1,0 +1,56 @@
+﻿@model AcademicAgriculture.Web.Models.Users.UserListViewModel
+
+@{
+    ViewData["Page"] = "Kullanıcı Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="Account" asp-action="Register">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Ad Soyad</td>
+                        <td>Kullanıcı Adı</td>
+                        <td>Email Adresi</td>
+                        <td>Rolü</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                    <tr>
+                        <td>
+                            <a class="btn btn-xs btn-info" asp-controller="Account" asp-action="Update" asp-route-id="@user.Id"><icon class="icon icon-edit"></icon></a>
+                            <a class="btn btn-xs btn-danger btndel" data-id="@user.Id" data-controller="Account" data-message="Üye"><icon class="icon icon-trash"></icon></a>
+                        </td>
+                        <td>@user.FullName</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.RolName</td>
+                        <td>@user.CreateDate</td>
+                        <td>@user.UpdateDate</td>
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

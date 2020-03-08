@@ -1,0 +1,56 @@
+﻿@model ICollection<AcademicAgriculture.Entities.Concrete.Slider>
+
+@{
+    ViewData["Page"] = "Slider Listesi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary btn-sm btn-labeled mr-5" asp-controller="Slider" asp-action="Add">
+            <div class="hidden-xs hidden-sm p0-10">
+                <span class="btn-label">
+                    <span class="icon icon-plus icon-lg icon-fw"></span>
+                </span>
+                <span>Yeni</span>
+            </div>
+            <icon class="hidden-lg hidden-md btn icon icon-plus"></icon>
+        </a>
+    </div>
+    <div class="card-body p-t-0">
+        <div class="card-body">
+            <table id="demo-datatables-colreorder-2" class="table table-hover table-striped table-bordered table-nowrap dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>işlem</td>
+                        <td>Başlık</td>
+                        <td>Durum</td>
+                        <td>Resim</td>
+                        <td>Açıklama</td>
+                        <td>Oluşturma Tarihi</td>
+                        <td>Güncelleme Tarihi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var slider in Model)
+                    {
+                    <tr>
+                        <td>
+                            <a class="btn btn-xs btn-info" asp-controller="Slider" asp-action="Update" asp-route-id="@slider.Id"><icon class="icon icon-edit"></icon></a>
+                            <a class="btn btn-xs btn-danger btndel" data-id="@slider.Id" data-controller="Slider" data-message="Slider"><icon class="icon icon-trash"></icon></a>
+                        </td>
+                        <td>@slider.Title</td>
+                        <td><button type="button" value="@slider.Id??Slider??IsActiveSlider" class="btn btn-@(slider.IsActive == true ? "success" : "danger") btn-sm">@(slider.IsActive == true ? "Aktif" : "Pasif")</button></td>
+                        <td>
+                            <img src="~/img/@slider.Url" width="80" />
+                        </td>
+                        <td>@slider.Description</td>
+                        <td>@slider.CreateDate</td>
+                        <td>@slider.UpdateDate</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
