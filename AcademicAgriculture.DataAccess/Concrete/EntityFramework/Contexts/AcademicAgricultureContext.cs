@@ -10,7 +10,7 @@ namespace AcademicAgriculture.DataAccess.Concrete.EntityFramework.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=AcademicAgricultureDb;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=94.73.146.5;Database=Academi; Uid=userD32;Pwd=KBsq78K2ROjv10Q;");
         }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Slider> Sliders { get; set; }

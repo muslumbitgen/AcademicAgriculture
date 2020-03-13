@@ -30,7 +30,7 @@ namespace AcademicAgriculture.Web
         {
             services.AddControllersWithViews();
             services.AddDbContext<CustomIdentityDbContext>
-              (options => options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=AcademicAgricultureDb;Trusted_Connection=true"));
+              (options => options.UseSqlServer("Server=94.73.146.5;Database=Academi; Uid=userD32;Pwd=KBsq78K2ROjv10Q;"));
             services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
                 .AddEntityFrameworkStores<CustomIdentityDbContext>()
                 .AddDefaultTokenProviders();

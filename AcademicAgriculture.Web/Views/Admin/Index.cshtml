@@ -1,4 +1,4 @@
-﻿
+﻿@model AcademicAgriculture.Web.Models.AdminCount
 @{
     ViewData["Page"] = "Anasayfa";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -14,9 +14,9 @@
                         </span>
                     </div>
                     <div class="media-middle media-body">
-                        <h6 class="media-heading">Visitors</h6>
+                        <h6 class="media-heading">Kullanıcı Sayısı</h6>
                         <h3 class="media-heading">
-                            <span class="fw-l">1,031,760</span>
+                            <span class="fw-l">@Model.UserCount</span>
                         </h3>
                     </div>
                 </div>
@@ -33,9 +33,9 @@
                         </span>
                     </div>
                     <div class="media-middle media-body">
-                        <h6 class="media-heading">Orders</h6>
+                        <h6 class="media-heading">Ürün Sayısı</h6>
                         <h3 class="media-heading">
-                            <span class="fw-l">1,256 Items</span>
+                            <span class="fw-l">@Model.ProductCount</span>
                         </h3>
                     </div>
                 </div>
@@ -48,13 +48,13 @@
                 <div class="media">
                     <div class="media-middle media-left">
                         <span class="bg-primary circle sq-48">
-                            <span class="icon icon-clock-o"></span>
+                            <span class="icon icon-newspaper-o"></span>
                         </span>
                     </div>
                     <div class="media-middle media-body">
-                        <h6 class="media-heading">Average Duration</h6>
+                        <h6 class="media-heading">Haber Sayısı</h6>
                         <h3 class="media-heading">
-                            <span class="fw-l">00:07:56</span>
+                            <span class="fw-l">@Model.BlogCount</span>
                         </h3>
                     </div>
                 </div>

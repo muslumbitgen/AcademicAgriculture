@@ -25,7 +25,14 @@
 
                             </div>
                             <div class="entry-content">
-                                <p>@blog.Description.Substring(0, 20)</p>
+                                @if (blog.Description.Length>20)
+                                {
+                                    <p>@blog.Description.Substring(0, 20)</p>
+                                }
+                                else
+                                {
+                                    <p>@blog.Description</p>
+                                }
                             </div>
                             <div class="entry-footer">
                                 <a asp-controller="Home" asp-action="BlogDetail" asp-route-id="@blog.Id">Devamını Oku...</a>

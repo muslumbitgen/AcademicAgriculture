@@ -28,7 +28,14 @@
 
                             </div>
                             <div class="entry-content">
-                                <p>@product.Description.Substring(0, 20)</p>
+                                @if (product.Description.Length > 20)
+                                {
+                                    <p>@product.Description.Substring(0, 20)</p>
+                                }
+                                else
+                                {
+                                    <p>@product.Description</p>
+                                }
                             </div>
                             <div class="entry-footer">
                                 <a  asp-controller="Home" asp-action="ProductDetail" asp-route-id="@product.Id">Devamını Oku...</a>

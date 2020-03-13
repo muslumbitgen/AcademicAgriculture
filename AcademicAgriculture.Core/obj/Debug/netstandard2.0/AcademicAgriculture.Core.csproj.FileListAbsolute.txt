@@ -5,3 +5,4 @@ C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Debug\netstandard2.
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\bin\Debug\netstandard2.0\AcademicAgriculture.Core.pdb
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Debug\netstandard2.0\AcademicAgriculture.Core.dll
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Debug\netstandard2.0\AcademicAgriculture.Core.pdb
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Debug\netstandard2.0\AcademicAgriculture.Core.csprojAssemblyReference.cache

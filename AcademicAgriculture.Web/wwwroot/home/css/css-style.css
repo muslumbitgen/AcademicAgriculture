@@ -512,9 +512,9 @@ table tr th {
 }
 @media (max-width: 1024px)
 {
- .container {
-     display: none;
- }
+    .nav ul.menu > li {
+        display: none !important;
+    }
 }
 .tabs .tabs-nav {
     margin: 0;
@@ -1735,7 +1735,8 @@ div.aligncenter,
 }
 
 .nav ul.menu > li {
-    display: block;color: black;
+    display: block;
+    color: black;
     float: left;
     position: relative;
     padding: 22px 24px;

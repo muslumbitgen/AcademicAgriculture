@@ -24,10 +24,6 @@
     <ProjectReference Include="..\AcademicAgriculture.DataAccess\AcademicAgriculture.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\img\" />
-  </ItemGroup>
-
 
 
 </Project>

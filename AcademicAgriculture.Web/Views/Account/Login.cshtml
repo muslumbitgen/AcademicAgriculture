@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Akademik Ziraat ve Peysaj</title>
+    <title>Akademik Ziraat ve Peyzaj</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="description" content="Elephant is an admin template that helps you build modern Admin Applications, professionally fast! Built on top of Bootstrap, it includes a large collection of HTML, CSS and JS components that are simple to use and easy to customize.">
     <meta property="og:url" content="http://demo.madebytilde.com/elephant">
@@ -36,7 +36,7 @@
     <div class="login">
         <div class="login-body">
             <a class="login-brand" href="index.html">
-                <img class="img-responsive" src="~/admin/img/logo.svg" alt="Elephant">
+                <img class="img-responsive" src="~/img/logo.png" alt="Elephant">
             </a>
             <div class="login-form">
                 <form data-toggle="validator" asp-controller="Account" asp-action="Login">
@@ -65,8 +65,8 @@
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-label">Beni hatırla.</span>
                         </label>
-                        <span aria-hidden="true"> · </span>
-                        <a asp-controller="Account" asp-action="ForgotPassword">Parolanızı mı unuttunuz?</a>
+                        @*<span aria-hidden="true"> · </span>*@
+                       @* <a asp-controller="Account" asp-action="ForgotPassword">Parolanızı mı unuttunuz?</a>*@
                     </div>
                     <button class="btn btn-primary btn-block" type="submit">Giriş Yap</button>
                 </form>

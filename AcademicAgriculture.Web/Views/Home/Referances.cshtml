@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-title">Anasayfa</h1>
+                    <h1 class="page-title">Referanslar</h1>
                 </div>
             </div>
         </div>
@@ -39,7 +39,14 @@
                                 </div>
                             </div>
                             <header class="entry-header">
-                                <h2 class="entry-title"><a  asp-controller="Home" asp-action="ReferanceDetail" asp-route-id="@item.Id">@item.Title.Substring(0,15)</a></h2>
+                                @if (item.Title.Length > 15)
+                                {
+                                    <h2 class="entry-title"><a asp-controller="Home" asp-action="ReferanceDetail" asp-route-id="@item.Id">@item.Title.Substring(0, 15)</a></h2>
+                                }
+                                else
+                                { 
+                                    <h2 class="entry-title"><a asp-controller="Home" asp-action="ReferanceDetail" asp-route-id="@item.Id">@item.Title</a></h2>
+                                }
                             </header>
                         </div>
                     </div>

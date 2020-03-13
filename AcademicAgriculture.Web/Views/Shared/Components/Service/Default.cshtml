@@ -24,7 +24,14 @@
                                     <div class="service-icon"><i class="flaticon-nature-@i "></i></div>
                                     <h2 class="entry-title"><a asp-controller="Home" asp-action="ServiceDetail" asp-route-id="@service.Id">@service.Title</a></h2>
                                 </div>
-                                <p>@service.Description.Substring(0, 20)</p>
+                                @if (service.Description.Length > 20)
+                                {
+                                    <p>@service.Description.Substring(0, 20)</p>
+                                }
+                                else
+                                {
+                                    <p>@service.Description</p>
+                                }
                             </div>
                         </div>
                     </div>
