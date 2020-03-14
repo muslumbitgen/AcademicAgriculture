@@ -1,0 +1,8 @@
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\bin\Release\netstandard2.0\AcademicAgriculture.Core.deps.json
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\bin\Release\netstandard2.0\AcademicAgriculture.Core.dll
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\bin\Release\netstandard2.0\AcademicAgriculture.Core.pdb
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Release\netstandard2.0\AcademicAgriculture.Core.csprojAssemblyReference.cache
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Release\netstandard2.0\AcademicAgriculture.Core.AssemblyInfoInputs.cache
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Release\netstandard2.0\AcademicAgriculture.Core.AssemblyInfo.cs
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Release\netstandard2.0\AcademicAgriculture.Core.dll
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Core\obj\Release\netstandard2.0\AcademicAgriculture.Core.pdb
