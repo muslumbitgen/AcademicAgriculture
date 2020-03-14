@@ -62,31 +62,32 @@
                 </div>
 
                 <div class="col-sm-8">
+                    <p>@ViewBag.message</p>
                     <div class="fh-section-title clearfix  text-left style-2 version-dark margbtm30">
                         <h2>Bize <span class="main-color">Yazın</span></h2>
                     </div>
-                    <form asp-controller="Home" asp-action="SendFeedback"  method="post">
+                    <form asp-controller="SendMail" asp-action="Index" method="post">
                         <div class="fh-form fh-form-1">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <p class="field">
-                                        <input placeholder="Adınız*"  name="AdSoyad" type="text">
+                                        <input placeholder="Adınız*" asp-for="Feedback.AdSoyad" name="Feedback.AdSoyad" type="text">
                                     </p>
                                     <p class="field">
-                                        <input placeholder="Telefon*"  name="Telefon" type="text">
+                                        <input placeholder="Telefon*" asp-for="Feedback.Telefon" name="Feedback.Telefon" type="text">
                                     </p>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <p class="field">
-                                        <input placeholder="Email *"  name="Email" type="email">
+                                        <input placeholder="Email *" asp-for="Feedback.Email" name="Feedback.Email" type="email">
                                     </p>
                                     <p class="field">
-                                        <input placeholder="Konu"  name="Konu" type="text">
+                                        <input placeholder="Konu" asp-for="Feedback.Konu" name="Feedback.Konu" type="text">
                                     </p>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <p class="field single-field">
-                                        <textarea placeholder="Mesajın..."  name="Mesaj"></textarea>
+                                        <textarea placeholder="Mesajın..." asp-for="Feedback.Mesaj" name="Feedback.Mesaj"></textarea>
                                     </p>
                                 </div>
                                 <div class="col-md-4 col-sm-12 col-xs-12">

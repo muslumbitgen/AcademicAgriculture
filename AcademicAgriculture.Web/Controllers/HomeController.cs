@@ -29,7 +29,7 @@ namespace AcademicAgriculture.Web.Controllers
 
         public HomeController(
             IAboutService aboutService,
-            IProductService productService, 
+            IProductService productService,
             IProductCategoryService productCategoryService,
             IServiceService serviceService,
             IBlogService blogService,
@@ -54,7 +54,7 @@ namespace AcademicAgriculture.Web.Controllers
         {
             return View(_aboutService.GetAll().FirstOrDefault());
         }
-        public IActionResult Products(int id=0)
+        public IActionResult Products(int id = 0)
         {
             var products = _productService.GetByCategory(id).Where(x => x.IsActive == true);
             var productCategorys = _productCategoryService.GetAll().Where(x => x.IsActive == true);
@@ -64,8 +64,8 @@ namespace AcademicAgriculture.Web.Controllers
                 ProductCategories = productCategorys.ToList()
             };
             return View(model);
-        }     
-        public IActionResult ProductDetail(int id=0)
+        }
+        public IActionResult ProductDetail(int id = 0)
         {
             var product = _productService.GetById(id);
             var products = _productService.GetAll().Where(x => x.IsActive == true);
@@ -120,19 +120,13 @@ namespace AcademicAgriculture.Web.Controllers
         }
         public IActionResult Contact()
         {
-            var content= _contentService.GetAll().Where(x=>x.IsActive==true);
+            var content = _contentService.GetAll().Where(x => x.IsActive == true);
             ContentViewModel model = new ContentViewModel
             {
                 Content = content.FirstOrDefault()
             };
             return View(model);
         }
-        [HttpPost]
-        public IActionResult SendFeedback(Feedback feed)
-        {
-            return View();
-        }
-     
     }
 
 }
