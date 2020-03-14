@@ -152,7 +152,6 @@ C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\bin\Debug\netcoreapp3.1\
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\AcademicAgriculture.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
@@ -205,3 +204,6 @@ C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Referances.cshtml.g.cs
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\ReferanceDetail.cshtml.g.cs
 C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\obj\Debug\netcoreapp3.1\AcademicAgriculture.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Projects\AcademicAgriculture\AcademicAgriculture.Web\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

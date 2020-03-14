@@ -62,32 +62,35 @@
                 </div>
 
                 <div class="col-sm-8">
-                    <p>@ViewBag.message</p>
+                    @if (TempData["emailMessage"] != null)
+                    {
+                        <div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>@TempData["emailMessage"]</div>
+                    }
                     <div class="fh-section-title clearfix  text-left style-2 version-dark margbtm30">
                         <h2>Bize <span class="main-color">Yazın</span></h2>
                     </div>
-                    <form asp-controller="SendMail" asp-action="Index" method="post">
+                    <form asp-controller="Home" asp-action="Feedback" method="post">
                         <div class="fh-form fh-form-1">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <p class="field">
-                                        <input placeholder="Adınız*" asp-for="Feedback.AdSoyad" name="Feedback.AdSoyad" type="text">
+                                        <input placeholder="Adınız*" asp-for="Feedback.Name" name="Name" type="text">
                                     </p>
                                     <p class="field">
-                                        <input placeholder="Telefon*" asp-for="Feedback.Telefon" name="Feedback.Telefon" type="text">
+                                        <input placeholder="Telefon*" asp-for="Feedback.Phone" name="Phone" type="text">
                                     </p>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <p class="field">
-                                        <input placeholder="Email *" asp-for="Feedback.Email" name="Feedback.Email" type="email">
+                                        <input placeholder="Email *" asp-for="Feedback.Email" name="Email" type="email">
                                     </p>
                                     <p class="field">
-                                        <input placeholder="Konu" asp-for="Feedback.Konu" name="Feedback.Konu" type="text">
+                                        <input placeholder="Konu" asp-for="Feedback.Subject" name="Subject" type="text">
                                     </p>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <p class="field single-field">
-                                        <textarea placeholder="Mesajın..." asp-for="Feedback.Mesaj" name="Feedback.Mesaj"></textarea>
+                                        <textarea placeholder="Mesajın..." asp-for="Feedback.Message" name="Message"></textarea>
                                     </p>
                                 </div>
                                 <div class="col-md-4 col-sm-12 col-xs-12">

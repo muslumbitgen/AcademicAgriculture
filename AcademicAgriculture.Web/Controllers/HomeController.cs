@@ -14,6 +14,10 @@ using AcademicAgriculture.Web.Models.References;
 using AcademicAgriculture.Web.Models.Contents;
 using System.Net.Mail;
 using System.Net;
+using MimeKit;
+using MimeKit.Text;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace AcademicAgriculture.Web.Controllers
 {
@@ -126,6 +130,48 @@ namespace AcademicAgriculture.Web.Controllers
                 Content = content.FirstOrDefault()
             };
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult Feedback(Feedback contactViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    MailMessage message = new MailMessage();
+                    message.To.Add(new MailAddress(contactViewModel.Email));
+                    message.From = new MailAddress("info@akademikziraat.com");
+                    message.Subject = contactViewModel.Subject;
+                    message.Body = string.Format("<p>Ad Soyad: {0} {1}<br><br>Email: {2}<br><br>Telefon: {3}<br><br>Mesaj: {4}</p>", contactViewModel.Name, contactViewModel.Phone, contactViewModel.Email, contactViewModel.Phone, contactViewModel.Message);
+                    message.IsBodyHtml = true;
+                    SmtpClient client = new SmtpClient();
+                    client.Port = 587;
+                    client.EnableSsl = true;
+
+                    client.UseDefaultCredentials = true;
+                    client.Host = "mail.akademikziraat.com";
+
+                    client.Credentials = new NetworkCredential("info@akademikziraat.com", "ZUwm96N9");
+
+                    //Add this line to bypass the certificate validation
+                    ServicePointManager.ServerCertificateValidationCallback = delegate (object s,
+                            X509Certificate certificate,
+                           X509Chain chain,
+                           SslPolicyErrors sslPolicyErrors)
+                    {
+                        return true;
+                    };
+                    client.Send(message);
+
+                }
+                catch (Exception ex)
+                {
+                    ModelState.Clear();
+                    ViewBag.Message = $" Oops! We have a problem here {ex.Message}";
+                }
+            }
+            TempData.Add("emailMessage", "Mesajınız gönderildi.");
+            return RedirectToAction("Contact");
         }
     }
 
